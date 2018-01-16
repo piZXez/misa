@@ -17,7 +17,6 @@ public class Demo extends JFrame{
     /**
      * @param args the command line arguments
      */
-//    public static Matrix matrix = new Matrix("Matrix 1", 6, 6);
     
     public Demo (){
         setSize(600, 600);
