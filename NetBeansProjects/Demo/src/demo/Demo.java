@@ -31,19 +31,9 @@ public class Demo extends JFrame{
     }
     
     public static void main(String[] args) {
-//        new Demo();
-//        matrix.matrixPrint();
-//        Point p1 = new Point("A", 2, 3);
-//        Point p2 = new Point("B", 2, 3);
-//        Point p3 = new Point("C", 4, 3);
-//        
-//        System.out.println(p1.trajCompare(p2));
-//        System.out.println(p1.trajCompare(p3));
-        
         GridMap gridMap = Data.setData();
         gridMap.showAllRoutePoints();
         gridMap.showRoutePoints(1);
-//        gridMap.showMatrix();
         gridMap.getMatrix().matrixPrint();
     }
     

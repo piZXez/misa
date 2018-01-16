@@ -55,6 +55,7 @@ public class GridMap {
         }
     }
     
+    //in ra ma trận
     public void showMatrix(){
         for (int i=0; i<matrix.getA(); i++){
             for(int j=0; j<matrix.getB(); j++){
