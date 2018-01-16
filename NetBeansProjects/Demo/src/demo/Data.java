@@ -44,21 +44,23 @@ public class Data {
         routePoints1.add(new RoutePoint(4, 5));
         
         routePoints2.add(new RoutePoint(1, 0));
-        routePoints2.add(new RoutePoint(2, 0));
-        routePoints2.add(new RoutePoint(3, 0));
+        routePoints2.add(new RoutePoint(1, 1));
+        routePoints2.add(new RoutePoint(2, 1));
         routePoints2.add(new RoutePoint(3, 1));
-        routePoints2.add(new RoutePoint(4, 1));
-        routePoints2.add(new RoutePoint(4, 2));
-        routePoints2.add(new RoutePoint(5, 2));
+        routePoints2.add(new RoutePoint(3, 2));
+        routePoints2.add(new RoutePoint(3, 3));
+        routePoints2.add(new RoutePoint(3, 4));
+        routePoints2.add(new RoutePoint(3, 5));
         
         routePoints3.add(new RoutePoint(0, 0));
         routePoints3.add(new RoutePoint(1, 0));
         routePoints3.add(new RoutePoint(1, 1));
         routePoints3.add(new RoutePoint(1, 2));
-        routePoints3.add(new RoutePoint(1, 3));
+        routePoints3.add(new RoutePoint(2, 2));
         routePoints3.add(new RoutePoint(2, 3));
-        routePoints3.add(new RoutePoint(2, 4));
-        routePoints3.add(new RoutePoint(2, 5));
+        routePoints3.add(new RoutePoint(3, 3));
+        routePoints3.add(new RoutePoint(3, 4));
+        routePoints3.add(new RoutePoint(3, 5));
        
         
         route1.setRoutePoints(routePoints1);
