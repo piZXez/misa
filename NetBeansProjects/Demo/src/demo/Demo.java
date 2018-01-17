@@ -31,9 +31,18 @@ public class Demo extends JFrame{
     
     public static void main(String[] args) {
         GridMap gridMap = Data.setData();
-        gridMap.showAllRoutePoints();
-        gridMap.showRoutePoints(1);
-        gridMap.getMatrix().matrixPrint();
+        GridMap gridMap1 = Data1.setData();
+        
+//        gridMap.showAllRoutePoints();
+//        gridMap.showRoutePoints(1);
+//        gridMap.getMatrix().setDefaultPoints();
+//        gridMap.getMatrix().getDefaultPoints();
+//        for(int i=0; i<gridMap.getRoutePoints(0).size(); i++){
+//            if(gridMap.getRoutePoints(0).get(i).getCount() == 0){
+//                gridMap.getRoutePoints(0).get(i).printXY();
+//            }
+//        }
+        gridMap1.countStack(4);
     }
     
 }

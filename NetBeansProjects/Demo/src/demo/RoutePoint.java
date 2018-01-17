@@ -11,6 +11,7 @@ package demo;
  */
 public class RoutePoint {
     private String routePointName;
+    private int count = 0;
     private int x;
     private int y;
 
@@ -25,6 +26,12 @@ public class RoutePoint {
         this.y = y;
     }
     
+    public RoutePoint(int x, int y, int count) {
+        this.x = x;
+        this.y = y;
+        this.count = count;
+    }
+    
     //so sánh vị trí 2 điểm
     public boolean equals(RoutePoint p1){
         if(this.x == p1.getX() && this.y == p1.getY()){
@@ -33,8 +40,18 @@ public class RoutePoint {
         return false;
     }
 
-    public void getXY(){
+    //in ra tọa độ (x,y)
+    public void printXY(){
         System.out.print("("+x+","+y+") ");
+    }
+    
+    //tăng count lên 1
+    public void stackCount(){
+        count = count + 1;
+    }
+    
+    public String getXY(){
+        return "("+x+","+y+")";
     }
     
     public int getX() {
@@ -53,6 +70,10 @@ public class RoutePoint {
         this.y = y;
     }
 
+    public int getCount(){
+        return count;
+    }
+    
     public String getRoutePointName() {
         return routePointName;
     }

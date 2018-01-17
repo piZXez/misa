@@ -5,12 +5,15 @@
  */
 package demo;
 
+import java.util.List;
+
 /**
  *
  * @author DELL-PC
  */
 public class Matrix {
     private String matrixName;
+    private List<RoutePoint> routePoints;
     private int a;
     private int b;
 
@@ -23,16 +26,30 @@ public class Matrix {
     Matrix() {
     }
 
-    Matrix(int i, int i0) {
+    Matrix(int a, int b) {
+        this.a = a;
+        this.b = b;
     }
     
     //in ma trận
-    public void matrixPrint(){
-        for (int i=0; i<this.a; i++){
-            for(int j=0; j<this.b; j++){
-                System.out.print(i + "" + j + " ");
+    public void getDefaultPoints(){
+        int t = 0;
+        for (int i=0; i<a; i++){
+            for(int j=0; j<b; j++){
+                routePoints.get(t).printXY();
+                t++; 
             }
             System.out.println("");
+        }
+    }
+    
+    //lập tọa độ ma trận
+    public void setDefaultPoints(){
+        int t = 0;
+        for(int i=0; i<a; i++){
+            for(int j=0; j<b; j++){
+                routePoints.add(new RoutePoint(j, i));
+            }
         }
     }
 
@@ -58,5 +75,13 @@ public class Matrix {
 
     public void setMatrixName(String matrixName) {
         this.matrixName = matrixName;
+    }
+
+    public List<RoutePoint> getRoutePoints() {
+        return routePoints;
+    }
+
+    public void setRoutePoints(List<RoutePoint> routePoints) {
+        this.routePoints = routePoints;
     }
 }

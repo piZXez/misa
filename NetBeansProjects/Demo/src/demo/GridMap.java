@@ -39,7 +39,7 @@ public class GridMap {
     public void showRoutePoints(int a) {
         System.out.println("RoutePoints " + (a) + " is: ");
         for (int i = 0; i < this.routes.get(a).getRoutePoints().size(); i++) {
-            this.routes.get(a).getRoutePoints().get(i).getXY();
+            this.routes.get(a).getRoutePoints().get(i).printXY();
         }
         System.out.println("");
     }
@@ -49,21 +49,42 @@ public class GridMap {
         System.out.println("All routePoints is: ");
         for (int i = 0; i < routes.size(); i++) {
             for (int j = 0; j < routes.get(i).getRoutePoints().size(); j++) {
-                routes.get(i).getRoutePoints().get(j).getXY();
+                routes.get(i).getRoutePoints().get(j).printXY();
             }
             System.out.println("");
         }
     }
     
-    //in ra ma trận
-    public void showMatrix(){
-        for (int i=0; i<matrix.getA(); i++){
-            for(int j=0; j<matrix.getB(); j++){
-                System.out.print(i + "" + j + " ");
+    //get về tập routePoints của route(i)
+    public List<RoutePoint> getRoutePoints(int i){
+        return routes.get(i).getRoutePoints();
+    }
+    
+    //in ra tọa độ các điểm trùng nhau 'stack' lần giữa các route
+    public void countStack (int stack){
+        for(int t = 0; t < (matrix.getRoutePoints().size()); t++){
+            for(int i = 0; i < routes.size(); i++){
+                for(int j = 0; j < routes.get(i).getRoutePoints().size(); j++){
+                    if(matrix.getRoutePoints().get(t).equals(routes.get(i).getRoutePoints().get(j)) == true){
+                        matrix.getRoutePoints().get(t).stackCount();                       
+                    }
+                }
             }
-            System.out.println("");
+            if(matrix.getRoutePoints().get(t).getCount() == stack){
+                matrix.getRoutePoints().get(t).printXY();
+                System.out.println("");
+            }
         }
     }
+    //in ra ma trận
+//    public void showMatrix(){
+//        for (int i=0; i<matrix.getA(); i++){
+//            for(int j=0; j<matrix.getB(); j++){
+//                System.out.print(i + "" + j + " ");
+//            }
+//            System.out.println("");
+//        }
+//    }
     
     public String getGridMapName() {
         return gridMapName;
