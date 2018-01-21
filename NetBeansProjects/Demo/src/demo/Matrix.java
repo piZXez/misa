@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Matrix {
     private String matrixName;
-    private List<RoutePoint> routePoints;
+    private List<Label> matrixLabels;
     private int a;
     private int b;
 
@@ -31,28 +31,26 @@ public class Matrix {
         this.b = b;
     }
     
-    //in ma trận
-    public void getDefaultPoints(){
-        int t = 0;
-        for (int i=0; i<a; i++){
+    //lập nhãn mặc định
+    public void setDefaultLabel(){
+        for(int i=0; i<a; i++){
             for(int j=0; j<b; j++){
-                routePoints.get(t).printXY();
-                t++; 
+                matrixLabels.add(new Label(j, i));
+            }
+        }
+    }
+    
+    public void getDefaultLabel(){
+        int t = 0;
+        for(int i=0; i<a; i++){
+            for(int j=0; j<b; j++){
+                System.out.print(matrixLabels.get(t).getXY() + "");
+                t++;
             }
             System.out.println("");
         }
     }
     
-    //lập tọa độ ma trận
-    public void setDefaultPoints(){
-        int t = 0;
-        for(int i=0; i<a; i++){
-            for(int j=0; j<b; j++){
-                routePoints.add(new RoutePoint(j, i));
-            }
-        }
-    }
-
     public int getA() {
         return a;
     }
@@ -77,11 +75,11 @@ public class Matrix {
         this.matrixName = matrixName;
     }
 
-    public List<RoutePoint> getRoutePoints() {
-        return routePoints;
+    public List<Label> getMatrixLabels() {
+        return matrixLabels;
     }
 
-    public void setRoutePoints(List<RoutePoint> routePoints) {
-        this.routePoints = routePoints;
+    public void setMatrixLabels(List<Label> matrixLabels) {
+        this.matrixLabels = matrixLabels;
     }
 }

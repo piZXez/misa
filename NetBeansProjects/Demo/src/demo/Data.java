@@ -25,13 +25,10 @@ public class Data {
     private static List<RoutePoint> routePoints1 = new ArrayList<>();
     private static List<RoutePoint> routePoints2 = new ArrayList<>();
     private static List<RoutePoint> routePoints3 = new ArrayList<>();
-    private static List<RoutePoint> routePointsMatrix = new ArrayList<>();
     
     public static GridMap setData(){
         matrix.setA(6);
         matrix.setB(6);
-        matrix.setRoutePoints(routePointsMatrix);
-        matrix.setDefaultPoints();
         
         gridMap.setMatrix(matrix);
         
@@ -76,6 +73,7 @@ public class Data {
         gridMap.addRoute(route2);
         gridMap.addRoute(route3);
 
+        gridMap.convertPointToLabel();
         
         return gridMap;
     }

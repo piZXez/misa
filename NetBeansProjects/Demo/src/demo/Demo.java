@@ -32,6 +32,7 @@ public class Demo extends JFrame{
     public static void main(String[] args) {
         GridMap gridMap = Data.setData();
         GridMap gridMap1 = Data1.setData();
+        GridMap gridMap2 = Data2.setData();
         
 //        gridMap.showAllRoutePoints();
 //        gridMap.showRoutePoints(1);
@@ -42,7 +43,10 @@ public class Demo extends JFrame{
 //                gridMap.getRoutePoints(0).get(i).printXY();
 //            }
 //        }
-        gridMap1.countStack(4);
+        gridMap2.showAllRouteLabels();
+        gridMap2.showAllRoutePoints();
+        gridMap2.countStack(1);
+        
     }
     
 }

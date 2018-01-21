@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author DELL-PC
  */
-public class Data1 {  
+public class Data2 {  
     
     private static Matrix matrix = new Matrix();
     private static GridMap gridMap = new GridMap();
@@ -39,46 +39,46 @@ public class Data1 {
         
         gridMap.setMatrix(matrix);
         
-        routePoints1.add(new RoutePoint(0, 1));
-        routePoints1.add(new RoutePoint(1, 1));
-        routePoints1.add(new RoutePoint(2, 1));
-        routePoints1.add(new RoutePoint(2, 2));
-        routePoints1.add(new RoutePoint(2, 3));
-        routePoints1.add(new RoutePoint(2, 4));
-        routePoints1.add(new RoutePoint(3, 4));
-        routePoints1.add(new RoutePoint(3, 5));
-        routePoints1.add(new RoutePoint(3, 6));
-        routePoints1.add(new RoutePoint(4, 6));
+        routePoints1.add(new RoutePoint(1, 3));
+        routePoints1.add(new RoutePoint(4, 5));
+        routePoints1.add(new RoutePoint(6, 4));
+        routePoints1.add(new RoutePoint(7, 6));
+        routePoints1.add(new RoutePoint(8, 10));
+        routePoints1.add(new RoutePoint(7, 12));
+        routePoints1.add(new RoutePoint(9, 13));
+        routePoints1.add(new RoutePoint(11, 17));
+        routePoints1.add(new RoutePoint(11, 19));
+        routePoints1.add(new RoutePoint(13, 18));
         
-        routePoints2.add(new RoutePoint(1, 0));
-        routePoints2.add(new RoutePoint(1, 1));
-        routePoints2.add(new RoutePoint(2, 1));
-        routePoints2.add(new RoutePoint(3, 1));
         routePoints2.add(new RoutePoint(3, 2));
         routePoints2.add(new RoutePoint(3, 3));
-        routePoints2.add(new RoutePoint(3, 4));
-        routePoints2.add(new RoutePoint(3, 5));
-        routePoints2.add(new RoutePoint(4, 5));
+        routePoints2.add(new RoutePoint(7, 5));
+        routePoints2.add(new RoutePoint(9, 4));
+        routePoints2.add(new RoutePoint(11, 8));
+        routePoints2.add(new RoutePoint(11, 10));
+        routePoints2.add(new RoutePoint(9, 14));
+        routePoints2.add(new RoutePoint(10, 17));
+        routePoints2.add(new RoutePoint(14, 15));
         
-        routePoints3.add(new RoutePoint(0, 1));
-        routePoints3.add(new RoutePoint(0, 2));
-        routePoints3.add(new RoutePoint(1, 2));
-        routePoints3.add(new RoutePoint(2, 2));
-        routePoints3.add(new RoutePoint(2, 3));
-        routePoints3.add(new RoutePoint(2, 4));
-        routePoints3.add(new RoutePoint(2, 5));
-        routePoints3.add(new RoutePoint(3, 5));
+        routePoints3.add(new RoutePoint(0, 4));
+        routePoints3.add(new RoutePoint(2, 8));
         routePoints3.add(new RoutePoint(3, 6));
+        routePoints3.add(new RoutePoint(7, 6));
+        routePoints3.add(new RoutePoint(6, 11));
+        routePoints3.add(new RoutePoint(6, 13));
+        routePoints3.add(new RoutePoint(6, 17));
+        routePoints3.add(new RoutePoint(10, 16));
+        routePoints3.add(new RoutePoint(9, 20));
         
-        routePoints4.add(new RoutePoint(1, 0));
-        routePoints4.add(new RoutePoint(1, 1));
-        routePoints4.add(new RoutePoint(1, 2));
-        routePoints4.add(new RoutePoint(2, 2));
-        routePoints4.add(new RoutePoint(3, 2));
-        routePoints4.add(new RoutePoint(3, 3));
+        routePoints4.add(new RoutePoint(3, 1));
         routePoints4.add(new RoutePoint(3, 4));
-        routePoints4.add(new RoutePoint(3, 5));
-        routePoints4.add(new RoutePoint(3, 6));
+        routePoints4.add(new RoutePoint(3, 8));
+        routePoints4.add(new RoutePoint(6, 7));
+        routePoints4.add(new RoutePoint(9, 6));
+        routePoints4.add(new RoutePoint(11, 10));
+        routePoints4.add(new RoutePoint(11, 14));
+        routePoints4.add(new RoutePoint(10, 15));
+        routePoints4.add(new RoutePoint(9, 19));
        
         
         route1.setRoutePoints(routePoints1);

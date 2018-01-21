@@ -11,6 +11,7 @@ package demo;
  */
 public class RoutePoint {
     private String routePointName;
+    private Label label;
     private int count = 0;
     private int x;
     private int y;
@@ -30,14 +31,6 @@ public class RoutePoint {
         this.x = x;
         this.y = y;
         this.count = count;
-    }
-    
-    //so sánh vị trí 2 điểm
-    public boolean equals(RoutePoint p1){
-        if(this.x == p1.getX() && this.y == p1.getY()){
-            return true;
-        }
-        return false;
     }
 
     //in ra tọa độ (x,y)
@@ -80,5 +73,13 @@ public class RoutePoint {
 
     public void setRoutePointName(String routePointName) {
         this.routePointName = routePointName;
+    }
+
+    public Label getLabel() {
+        return label;
+    }
+
+    public void setLabel(Label label) {
+        this.label = label;
     }
 }

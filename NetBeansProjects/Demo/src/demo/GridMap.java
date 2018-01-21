@@ -55,36 +55,48 @@ public class GridMap {
         }
     }
     
+    //convert điểm về nhãn
+    public void convertPointToLabel(){
+        for (int i = 0; i < routes.size(); i++){
+            for (int j = 0; j < routes.get(i).getRoutePoints().size(); j++){
+                int px = routes.get(i).getRoutePoints().get(j).getX();
+                int py = routes.get(i).getRoutePoints().get(j).getY();
+                routes.get(i).getRoutePoints().get(j).setLabel(new Label((px/3), (py/3)));
+            }
+        }
+    }
+    
+    public void showAllRouteLabels() {
+        System.out.println("All labels is: ");
+        for (int i = 0; i < routes.size(); i++) {
+            for (int j = 0; j < routes.get(i).getRoutePoints().size(); j++) {
+                System.out.print(routes.get(i).getRoutePoints().get(j).getLabel().getXY() + "");
+            }
+            System.out.println("");
+        }
+    }
+    
     //get về tập routePoints của route(i)
     public List<RoutePoint> getRoutePoints(int i){
         return routes.get(i).getRoutePoints();
     }
     
-    //in ra tọa độ các điểm trùng nhau 'stack' lần giữa các route
+    //in ra các nhãn trùng nhau 'stack' lần giữa các route
     public void countStack (int stack){
-        for(int t = 0; t < (matrix.getRoutePoints().size()); t++){
+        for(int t = 0; t < (matrix.getMatrixLabels().size()); t++){
             for(int i = 0; i < routes.size(); i++){
                 for(int j = 0; j < routes.get(i).getRoutePoints().size(); j++){
-                    if(matrix.getRoutePoints().get(t).equals(routes.get(i).getRoutePoints().get(j)) == true){
-                        matrix.getRoutePoints().get(t).stackCount();                       
+                    if(matrix.getMatrixLabels().get(t).equalsLabel(routes.get(i).getRoutePoints().get(j).getLabel()) == true){
+                        matrix.getMatrixLabels().get(t).stackCount();                       
                     }
                 }
             }
-            if(matrix.getRoutePoints().get(t).getCount() == stack){
-                matrix.getRoutePoints().get(t).printXY();
+            if(matrix.getMatrixLabels().get(t).getCount() == stack){
+                matrix.getMatrixLabels().get(t).printXY();
                 System.out.println("");
             }
         }
     }
-    //in ra ma trận
-//    public void showMatrix(){
-//        for (int i=0; i<matrix.getA(); i++){
-//            for(int j=0; j<matrix.getB(); j++){
-//                System.out.print(i + "" + j + " ");
-//            }
-//            System.out.println("");
-//        }
-//    }
     
     public String getGridMapName() {
         return gridMapName;
