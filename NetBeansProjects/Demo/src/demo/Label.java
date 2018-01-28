@@ -21,8 +21,15 @@ class Label {
     public Label(int x, int y) {
         this.x = x;
         this.y = y;
+        this.labelName = x + "" + y;
     }
 
+    public Label(String labelName, int x, int y) {
+        this.labelName = labelName;
+        this.x = x;
+        this.y = y;
+    }
+    
     //tăng count lên 1
     public void stackCount(){
         count = count + 1;

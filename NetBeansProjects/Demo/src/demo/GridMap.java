@@ -34,6 +34,9 @@ public class GridMap {
     public void addRoute(Route route1) {
         this.routes.add(route1);
     }
+    public Route getRoute(int i){
+        return routes.get(i);
+    }
 
     //show tọa độ các điểm của 1 route đã chọn
     public void showRoutePoints(int a) {
@@ -66,8 +69,9 @@ public class GridMap {
         }
     }
     
+    //show các nhãn của tất cả các route trên gridmap
     public void showAllRouteLabels() {
-        System.out.println("All labels is: ");
+        System.out.println("All route labels is: ");
         for (int i = 0; i < routes.size(); i++) {
             for (int j = 0; j < routes.get(i).getRoutePoints().size(); j++) {
                 System.out.print(routes.get(i).getRoutePoints().get(j).getLabel().getXY() + "");
@@ -96,6 +100,15 @@ public class GridMap {
                 System.out.println("");
             }
         }
+    }
+    
+    public int frequentStack(Route route){
+        for (int i = 0; i < routes.size(); i++){
+            if (routes.get(i).isSubSequence(route)){
+                route.stackFrequentCount();
+            }
+        }
+        return route.getFrequentCount();
     }
     
     public String getGridMapName() {

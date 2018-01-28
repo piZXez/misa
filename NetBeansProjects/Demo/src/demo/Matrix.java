@@ -44,7 +44,7 @@ public class Matrix {
         int t = 0;
         for(int i=0; i<a; i++){
             for(int j=0; j<b; j++){
-                System.out.print(matrixLabels.get(t).getXY() + "");
+                System.out.print(matrixLabels.get(t).getLabelName() + " ");
                 t++;
             }
             System.out.println("");

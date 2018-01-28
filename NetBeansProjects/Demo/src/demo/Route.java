@@ -5,7 +5,9 @@
  */
 package demo;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -14,6 +16,7 @@ import java.util.List;
 public class Route {
     private String routeName;
     private List<RoutePoint> routePoints;
+    private int frequentCount = 0;
 
     public Route(String routeName, List<RoutePoint> routePoints) {
         this.routeName = routeName;
@@ -25,6 +28,25 @@ public class Route {
     }
 
     Route() {
+    }
+    
+    public void stackFrequentCount(){
+        frequentCount = frequentCount + 1;
+    }
+    
+    //kiểm tra route này có là chuỗi con route kia không
+    public boolean isSubSequence(Route parentRoute){
+        Set<String> parentRoutePoints = new HashSet<>();
+        Set<String> subRoutePoints = new HashSet<>();
+        
+        for (int i = 0; i < parentRoute.getRoutePoints().size(); i++){
+            parentRoutePoints.add(parentRoute.getRoutePoints().get(i).getLabel().getXY());
+        }
+        for (int j = 0; j < routePoints.size(); j++){
+            subRoutePoints.add(routePoints.get(j).getLabel().getXY());
+        }
+        
+        return parentRoutePoints.containsAll(subRoutePoints);
     }
 
     public String getRouteName() {
@@ -42,6 +64,9 @@ public class Route {
     public void setRoutePoints(List<RoutePoint> routePoint) {
         this.routePoints = routePoint;
     }
-    
+
+    public int getFrequentCount() {
+        return frequentCount;
+    }
     
 }

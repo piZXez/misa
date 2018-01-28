@@ -43,9 +43,16 @@ public class Demo extends JFrame{
 //                gridMap.getRoutePoints(0).get(i).printXY();
 //            }
 //        }
-        gridMap2.showAllRouteLabels();
-        gridMap2.showAllRoutePoints();
-        gridMap2.countStack(1);
+//        gridMap2.showAllRouteLabels();
+//        gridMap2.showAllRoutePoints();
+//        gridMap2.countStack(1);
+        gridMap.showAllRouteLabels();
+//        System.out.println(gridMap.getRoute(0).isSubSequence(gridMap.getRoute(1)) + "");
+//        System.out.println(gridMap.getRoute(2).isSubSequence(gridMap.getRoute(1)) + "");
+//        System.out.println(gridMap.getRoute(2).isSubSequence(gridMap.getRoute(3)) + "");
+//        System.out.println(gridMap.getRoute(2).isSubSequence(gridMap.getRoute(4)) + "");
+//        System.out.println(gridMap.getRoute(3).isSubSequence(gridMap.getRoute(4)) + "");
+        System.out.println(gridMap.frequentStack(gridMap.getRoute(4)) + "");
         
     }
     
