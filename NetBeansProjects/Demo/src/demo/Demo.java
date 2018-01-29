@@ -5,34 +5,44 @@
  */
 package demo;
 
-import java.awt.Graphics;
 import javax.swing.JFrame;
 
 /**
  *
- * @author DELL-PC
+ * @author CCNE
  */
 public class Demo extends JFrame{
 
     /**
      * @param args the command line arguments
      */
-    
     public Demo (){
+//        Container cp = getContentPane();
+//        cp.add(draw);
+        GridMap gridMap = Data.setData();
+        GridMap gridMap1 = Data1.setData();
+        GridMap gridMap2 = Data2.setData();
+        
+        gridMap.showAllRouteLabels();
+        System.out.println(gridMap.frequentStack(gridMap.getRoute(4)) + "");
+
+        setContentPane(new Drawing(gridMap.getRoutePoints(0)));
+        setContentPane(new Drawing(gridMap.getRoutePoints(1)));
+        setContentPane(new Drawing(gridMap.getRoutePoints(2)));
+        setContentPane(new Drawing(gridMap.getRoutePoints(3)));
+        setContentPane(new Drawing(gridMap.getRoutePoints(4)));
+        
         setSize(600, 600);
         setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
     }
     
-    public void paint(Graphics g){
-        super.paint(g);
-    }
-    
     public static void main(String[] args) {
-        GridMap gridMap = Data.setData();
-        GridMap gridMap1 = Data1.setData();
-        GridMap gridMap2 = Data2.setData();
+        // TODO code application logic here
+        new Demo();
+        
+        
         
 //        gridMap.showAllRoutePoints();
 //        gridMap.showRoutePoints(1);
@@ -46,14 +56,11 @@ public class Demo extends JFrame{
 //        gridMap2.showAllRouteLabels();
 //        gridMap2.showAllRoutePoints();
 //        gridMap2.countStack(1);
-        gridMap.showAllRouteLabels();
 //        System.out.println(gridMap.getRoute(0).isSubSequence(gridMap.getRoute(1)) + "");
 //        System.out.println(gridMap.getRoute(2).isSubSequence(gridMap.getRoute(1)) + "");
 //        System.out.println(gridMap.getRoute(2).isSubSequence(gridMap.getRoute(3)) + "");
 //        System.out.println(gridMap.getRoute(2).isSubSequence(gridMap.getRoute(4)) + "");
 //        System.out.println(gridMap.getRoute(3).isSubSequence(gridMap.getRoute(4)) + "");
-        System.out.println(gridMap.frequentStack(gridMap.getRoute(4)) + "");
-        
     }
     
 }
