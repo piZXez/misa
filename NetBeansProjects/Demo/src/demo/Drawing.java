@@ -15,23 +15,27 @@ import javax.swing.JPanel;
  */
 public class Drawing extends JPanel{
     
-    private List<RoutePoint> routePoints;
+    private GridMap gridmap;
 
-    public Drawing(List<RoutePoint> routePoints) {
-        this.routePoints = routePoints;
+    public Drawing(GridMap gridmap) {
+        this.gridmap = gridmap;
     }
     
     @Override
     public void paintComponent(Graphics g){
-        int[] x = new int[routePoints.size()];
-        int[] y = new int[routePoints.size()];
-        for(int i = 0; i < routePoints.size(); i++){
-            x[i] = 100*routePoints.get(i).getLabel().getX();
+        
+        for(int index = 0; index < gridmap.getRoutes().size(); index++){
+            int[] x = new int[gridmap.getRoutePoints(index).size()];
+            int[] y = new int[gridmap.getRoutePoints(index).size()];
+            for(int i = 0; i < gridmap.getRoutePoints(index).size(); i++){
+                x[i] = 100*gridmap.getRoutePoints(index).get(i).getLabel().getX();
+            }
+        
+            for(int j = 0; j < gridmap.getRoutePoints(index).size(); j++){
+                y[j] = 100*gridmap.getRoutePoints(index).get(j).getLabel().getY();
+            }
+            g.drawPolyline(x, y, gridmap.getRoutes().size());
         }
         
-        for(int j = 0; j < routePoints.size(); j++){
-            y[j] = 100*routePoints.get(j).getLabel().getY();
-        }
-        g.drawPolyline(x, y, routePoints.size());
     }
 }

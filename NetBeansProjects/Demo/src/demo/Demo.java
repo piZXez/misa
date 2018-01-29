@@ -19,18 +19,14 @@ public class Demo extends JFrame{
     public Demo (){
 //        Container cp = getContentPane();
 //        cp.add(draw);
-        GridMap gridMap = Data.setData();
+        GridMap gridMap  = Data.setData();
         GridMap gridMap1 = Data1.setData();
         GridMap gridMap2 = Data2.setData();
         
         gridMap.showAllRouteLabels();
         System.out.println(gridMap.frequentStack(gridMap.getRoute(4)) + "");
 
-        setContentPane(new Drawing(gridMap.getRoutePoints(0)));
-        setContentPane(new Drawing(gridMap.getRoutePoints(1)));
-        setContentPane(new Drawing(gridMap.getRoutePoints(2)));
-        setContentPane(new Drawing(gridMap.getRoutePoints(3)));
-        setContentPane(new Drawing(gridMap.getRoutePoints(4)));
+        setContentPane(new Drawing(gridMap2));
         
         setSize(600, 600);
         setVisible(true);
